@@ -1,0 +1,11 @@
+CHIP Mux8Way {
+    IN a, b, c, d,
+       e, f, g, h,
+       sel[3];
+    OUT out;
+
+    PARTS:
+    Mux4Way (a = a, b = b, c = c, d = d, sel = sel[0..1], out = left);
+    Mux4Way (a = e, b = f, c = g, d = h, sel = sel[0..1], out = right);
+    Mux (a = left,  b = right, sel = sel[2], out = out);
+}

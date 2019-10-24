@@ -1,0 +1,28 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/01/DMux8Way.hdl
+
+/**
+ * 8-way demultiplexor:
+ * {a, b, c, d, e, f, g, h} = {in, 0, 0, 0, 0, 0, 0, 0} if sel == 000
+ *                            {0, in, 0, 0, 0, 0, 0, 0} if sel == 001
+ *                            etc.
+ *                            {0, 0, 0, 0, 0, 0, 0, in} if sel == 111
+ */
+
+CHIP DMux8Way {
+    IN in, sel[3];
+    OUT a, b, c, d, e, f, g, h;
+
+    PARTS:
+    Mux8Way (a = in, b = false, c = false, d = false, e = false, f = false, g = false, h = false, sel = sel, out = a);
+    Mux8Way (a = false, b = in, c = false, d = false, e = false, f = false, g = false, h = false, sel = sel, out = b);
+    Mux8Way (a = false, b = false, c = in, d = false, e = false, f = false, g = false, h = false, sel = sel, out = c);
+    Mux8Way (a = false, b = false, c = false, d = in, e = false, f = false, g = false, h = false, sel = sel, out = d);
+    Mux8Way (a = false, b = false, c = false, d = false, e = in, f = false, g = false, h = false, sel = sel, out = e);
+    Mux8Way (a = false, b = false, c = false, d = false, e = false, f = in, g = false, h = false, sel = sel, out = f);
+    Mux8Way (a = false, b = false, c = false, d = false, e = false, f = false, g = in, h = false, sel = sel, out = g);
+    Mux8Way (a = false, b = false, c = false, d = false, e = false, f = false, g = false, h = in, sel = sel, out = h);
+
+}
