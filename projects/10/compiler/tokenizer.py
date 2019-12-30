@@ -5,10 +5,11 @@ import sys
 # rgPar = argparse.ArgumentParser()
 class Tokenizer:
 
-    def __init__(self, jack_code):
+    def __init__(self, jack_code, err):
+        self.err_file = err
         self.curr_count = 0
         self.symbol_list = ['(', ')', '{', '}', '[',']', '.', ',', ';', '+', '-', '*', '/', '&', '|', '<', '>', '=', '~']
-        self.keyword_list = open("/media/ravi/Linux Space/nand2tetris/nand2tetris/projects/10/compiler/keyWord.txt").read().splitlines()
+        self.keyword_list = ['class', 'method', 'function', 'constructor', 'int', 'boolean', 'char', 'void', 'var', 'static', 'field', 'let', 'do', 'if', 'else', 'while', 'return', 'true', 'false', 'null', 'this']
         # print(self.keyword_list)
         cleaned_code = self.removeComments(jack_code)
         self.initial_tokens = self.iTokenize(cleaned_code)
@@ -98,6 +99,11 @@ class Tokenizer:
             return self.tokens[self.curr_count]
         else:
             return None
+    def peek_ahead(self):
+        if (self.curr_count+1 < len(self.initial_tokens)):
+            return self.tokens[self.curr_count+1]
+        else:
+            return None
 
 
     def partial_token(self):
@@ -107,7 +113,13 @@ class Tokenizer:
         if (token == s):
             return typ
         else:
-            print ("Err Type 1")
+            extyp = self.TokenType(s)
+            if (extyp == typ):
+                err_out = 'ERROR: ' + token + '\n'
+            else:
+                err_out = 'ERROR: Expecting <' + extyp  + '> but ' + token + '\n'     
+                
+            open(self.err_file, 'w').write(err_out)
             sys.exit()
 
             return False

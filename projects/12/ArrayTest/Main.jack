@@ -8,10 +8,10 @@ class Main {
 
     /** Performs several Array manipulations. */
     function void main() {
-        var Array r;                  // stores test results
+        var int r;                  // stores test results
         var Array a, b, c;
         
-        let r = 8000;
+        let r = -1;
         
         let a = Array.new(3);
         let a[2] = 222;

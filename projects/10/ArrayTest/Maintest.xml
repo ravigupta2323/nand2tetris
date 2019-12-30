@@ -22,6 +22,8 @@
 <symbol> , </symbol>
 <identifier> sum </identifier>
 <symbol> ; </symbol>
+<keyword> do </keyword>
+<identifier> something </identifier>
 <keyword> let </keyword>
 <identifier> length </identifier>
 <symbol> = </symbol>
