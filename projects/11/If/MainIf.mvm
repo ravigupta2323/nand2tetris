@@ -1,0 +1,17 @@
+function Main.main 0
+push argument 0
+pop pointer 0
+push constant 1
+push constant 2
+eq
+not
+if-goto Main_0
+push constant 2
+pop this 0
+goto Main_1
+label Main_0
+push constant 1
+pop this 0
+label Main_1
+push constant 0
+return

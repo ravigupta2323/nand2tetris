@@ -1,0 +1,18 @@
+function Main.main 0
+push argument 0
+pop pointer 0
+push constant 1
+push constant 2
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push constant 2
+pop this 0
+goto IF_END0
+label IF_FALSE0
+push constant 1
+pop this 0
+label IF_END0
+push constant 0
+return

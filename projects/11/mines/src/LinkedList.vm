@@ -1,0 +1,180 @@
+function LinkedList.new 0
+push constant 3
+call Memory.alloc 1
+pop pointer 0
+push constant 0
+pop this 0
+push constant 0
+pop this 2
+push pointer 0
+return
+function LinkedList.addFirst 1
+push argument 0
+pop pointer 0
+push argument 1
+call ListNode.new 1
+pop local 0
+push this 2
+push constant 0
+eq
+not
+if-goto LinkedList_0
+push local 0
+pop this 1
+goto LinkedList_1
+label LinkedList_0
+push local 0
+push this 0
+call ListNode.setNext 2
+pop temp 0
+label LinkedList_1
+push local 0
+pop this 0
+push this 2
+push constant 1
+add
+pop this 2
+push constant 0
+return
+function LinkedList.addLast 1
+push argument 0
+pop pointer 0
+push argument 1
+call ListNode.new 1
+pop local 0
+push this 2
+push constant 0
+eq
+not
+if-goto LinkedList_2
+push local 0
+pop this 0
+goto LinkedList_3
+label LinkedList_2
+push this 1
+push local 0
+call ListNode.setNext 2
+pop temp 0
+label LinkedList_3
+push local 0
+pop this 1
+push this 2
+push constant 1
+add
+pop this 2
+push constant 0
+return
+function LinkedList.removeFirst 2
+push argument 0
+pop pointer 0
+push this 0
+push constant 0
+eq
+not
+if-goto LinkedList_4
+push constant 1
+neg
+pop local 1
+goto LinkedList_5
+label LinkedList_4
+push this 0
+call ListNode.getValue 1
+pop local 1
+push this 0
+pop local 0
+push this 0
+call ListNode.getNext 1
+pop this 0
+push local 0
+call ListNode.dispose 1
+pop temp 0
+push this 2
+push constant 1
+sub
+pop this 2
+push this 2
+push constant 0
+eq
+not
+if-goto LinkedList_6
+push constant 0
+pop this 1
+goto LinkedList_7
+label LinkedList_6
+label LinkedList_7
+label LinkedList_5
+push local 1
+return
+function LinkedList.removeLast 2
+push argument 0
+pop pointer 0
+push this 1
+push constant 0
+eq
+not
+if-goto LinkedList_8
+push constant 1
+neg
+pop local 1
+goto LinkedList_9
+label LinkedList_8
+push this 1
+call ListNode.getValue 1
+pop local 1
+push this 1
+pop local 0
+push this 1
+call ListNode.getPrevious 1
+pop this 1
+push local 0
+call ListNode.dispose 1
+pop temp 0
+push this 2
+push constant 1
+sub
+pop this 2
+push this 2
+push constant 0
+eq
+not
+if-goto LinkedList_10
+push constant 0
+pop this 0
+goto LinkedList_11
+label LinkedList_10
+label LinkedList_11
+label LinkedList_9
+push local 1
+return
+function LinkedList.getSize 0
+push argument 0
+pop pointer 0
+push this 2
+return
+function LinkedList.dispose 2
+push argument 0
+pop pointer 0
+push this 0
+pop local 0
+push local 0
+push constant 0
+eq
+not
+not
+if-goto LinkedList_12
+push local 0
+pop local 1
+push local 0
+call ListNode.getNext 1
+pop local 0
+push local 1
+call ListNode.dispose 1
+pop temp 0
+goto LinkedList_13
+label LinkedList_12
+label LinkedList_13
+push pointer 0
+call Memory.deAlloc 1
+pop temp 0
+push constant 0
+return

@@ -1,0 +1,13 @@
+function Main.main 1
+label Main_0
+push constant 1
+push constant 1
+eq
+not
+if-goto Main_1
+push constant 2
+pop local 0
+goto Main_0
+label Main_1
+push constant 0
+return

@@ -1,0 +1,3 @@
+Run check.py as follows:
+python check.py CS15B033.tar.gz
+replacing CS15B033 with your roll number.
