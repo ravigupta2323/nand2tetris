@@ -1,0 +1,183 @@
+fucntion Main.main 4
+push constant 18
+call String.new 1
+push constant H
+call String.appendChar 2
+push constant O
+call String.appendChar 2
+push constant W
+call String.appendChar 2
+push constant  
+call String.appendChar 2
+push constant M
+call String.appendChar 2
+push constant A
+call String.appendChar 2
+push constant N
+call String.appendChar 2
+push constant Y
+call String.appendChar 2
+push constant  
+call String.appendChar 2
+push constant N
+call String.appendChar 2
+push constant U
+call String.appendChar 2
+push constant M
+call String.appendChar 2
+push constant B
+call String.appendChar 2
+push constant E
+call String.appendChar 2
+push constant R
+call String.appendChar 2
+push constant S
+call String.appendChar 2
+push constant ?
+call String.appendChar 2
+push constant  
+call String.appendChar 2
+call Keyboard.readInt 2
+push local 1
+push local 1
+call Array.new 2
+push local 0
+push constant 0
+push local 2
+label Main.0
+push local 2
+push local 1
+lt
+not
+if-goto Main.1
+push local 2
+push local 0
+add
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 23
+call String.new 1
+push constant E
+call String.appendChar 2
+push constant N
+call String.appendChar 2
+push constant T
+call String.appendChar 2
+push constant E
+call String.appendChar 2
+push constant R
+call String.appendChar 2
+push constant  
+call String.appendChar 2
+push constant T
+call String.appendChar 2
+push constant H
+call String.appendChar 2
+push constant E
+call String.appendChar 2
+push constant  
+call String.appendChar 2
+push constant N
+call String.appendChar 2
+push constant E
+call String.appendChar 2
+push constant X
+call String.appendChar 2
+push constant T
+call String.appendChar 2
+push constant  
+call String.appendChar 2
+push constant N
+call String.appendChar 2
+push constant U
+call String.appendChar 2
+push constant M
+call String.appendChar 2
+push constant B
+call String.appendChar 2
+push constant E
+call String.appendChar 2
+push constant R
+call String.appendChar 2
+push constant :
+call String.appendChar 2
+push constant  
+call String.appendChar 2
+call Keyboard.readInt 2
+push local 2
+push constant 1
+add
+push local 2
+goto Main.0
+label Main.1
+push constant 0
+push local 2
+push constant 0
+push local 3
+label Main.2
+push local 2
+push local 1
+lt
+not
+if-goto Main.3
+push local 3
+push local 0
+add
+pop pointer 1
+push that 0
+push local 2
+add
+push local 3
+push local 2
+push constant 1
+add
+push local 2
+goto Main.2
+label Main.3
+push constant 16
+call String.new 1
+push constant T
+call String.appendChar 2
+push constant H
+call String.appendChar 2
+push constant E
+call String.appendChar 2
+push constant  
+call String.appendChar 2
+push constant A
+call String.appendChar 2
+push constant V
+call String.appendChar 2
+push constant E
+call String.appendChar 2
+push constant R
+call String.appendChar 2
+push constant A
+call String.appendChar 2
+push constant G
+call String.appendChar 2
+push constant E
+call String.appendChar 2
+push constant  
+call String.appendChar 2
+push constant I
+call String.appendChar 2
+push constant S
+call String.appendChar 2
+push constant :
+call String.appendChar 2
+push constant  
+call String.appendChar 2
+call Output.printString 2
+pop temp 0
+push local 3
+push local 1
+call math.divide 2
+call Output.printInt 2
+pop temp 0
+call Output.println 1
+pop temp 0
+push constant 0
+return

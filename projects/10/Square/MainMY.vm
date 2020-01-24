@@ -1,0 +1,79 @@
+fucntion Main.main 1
+call SquareGame.new 1
+push local 0
+push local 0
+call SquareGame.run 1
+pop temp 0
+push local 0
+call SquareGame.dispose 1
+pop temp 0
+push constant 0
+return
+fucntion Main.test 4
+push constant 0
+not
+if-goto Main.0
+push constant 15
+call String.new 1
+push constant s
+call String.appendChar 2
+push constant t
+call String.appendChar 2
+push constant r
+call String.appendChar 2
+push constant i
+call String.appendChar 2
+push constant n
+call String.appendChar 2
+push constant g
+call String.appendChar 2
+push constant  
+call String.appendChar 2
+push constant c
+call String.appendChar 2
+push constant o
+call String.appendChar 2
+push constant n
+call String.appendChar 2
+push constant s
+call String.appendChar 2
+push constant t
+call String.appendChar 2
+push constant a
+call String.appendChar 2
+push constant n
+call String.appendChar 2
+push constant t
+call String.appendChar 2
+push local 2
+push constant 0
+push local 2
+push constant 1
+push local 3
+add
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 3
+add
+pop pointer 1
+push that 0
+push constant 2
+goto Main.1
+label Main.0
+push local 0
+push local 1
+call math.multiply 2
+push local 0
+push local 1
+push constant 2
+call math.divide 2
+push local 1
+push local 0
+push local 1
+or
+push local 0
+label Main.1
+push constant 0
+return
